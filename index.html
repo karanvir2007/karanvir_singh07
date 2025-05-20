@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title> singhhh
+</title>
+</head>
+<center>
+<body>
+<strong>
+<h1 style= "color: purple;"> 
+
+<U>
+SINGH KARANVIR 
+</U>
+
+</h1>
+
+
+<a href="https://www.instagram.com/k4r4.nvir?igsh=MTBpajhzODExZGhiNg==/">
+<img src="E016224F-FB09-4CF9-9F18-B93F633CEB62.jpeg"
+ width="400"
+ height="450">
+</a>
+
+
+
+<form onsubmit="return checkLogin(event);">
+Id utente: <input type="text" id="username"><br><br>
+Password: <input type="password" id="password"><br><br>
+<button type="submit">Accedi</button>
+</form>
+
+<br>
+</center>
+(id_utente:   basile) 
+<br>
+(password:   basile)
+<center>
+<p id="message" style="color:red;"></p>
+
+<script>
+let tentativi = 0;
+const maxTentativi = 3;
+
+function checkLogin(event) {
+event.preventDefault();
+
+const username = document.getElementById("username").value;
+const password = document.getElementById("password").value;
+const messaggio = document.getElementById("message");
+
+const usernameCorretto = "basile";
+const passwordCorretta = "basile";
+
+if (username === usernameCorretto && password === passwordCorretta) {
+window.location.href = "singh.html";
+return true;
+}
+
+tentativi++;
+if (tentativi >= maxTentativi) {
+messaggio.textContent = "Hai superato i tentativi disponibili. Riprova più tardi.";
+document.querySelector("form").style.display = "none";
+} else {
+messaggio.textContent = `Credenziali errate. Tentativo ${tentativi} di ${maxTentativi}.`;
+}
+
+return false;
+}
+</script>
+</center>
+</body>
+</html>
